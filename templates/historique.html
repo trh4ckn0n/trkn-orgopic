@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr" class="bg-black text-white">
+<head>
+    <meta charset="UTF-8">
+    <title>Historique des Orgonites - trhacknon</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="p-6">
+    <h1 class="text-3xl text-purple-400 text-center font-bold mb-6">📜 Historique des Générations</h1>
+
+    <div class="grid md:grid-cols-2 gap-6">
+        {% for entry in history %}
+        <div class="bg-gray-900 p-4 rounded-lg shadow-lg">
+            <p class="text-sm text-gray-400 mb-2">🕒 {{ entry.date }}</p>
+            <p class="text-xs italic text-gray-300 mb-2">🧠 {{ entry.prompt }}</p>
+            <div class="flex flex-col gap-2">
+                <img src="{{ entry.image }}" class="rounded border border-purple-400">
+                <img src="{{ entry.schema }}" class="rounded border border-blue-400">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="text-center mt-8">
+        <a href="/" class="text-blue-400 hover:underline">🔙 Retour à la génération</a>
+    </div>
+</body>
+</html>
