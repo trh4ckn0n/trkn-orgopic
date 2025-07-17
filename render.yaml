@@ -3,5 +3,5 @@ services:
     name: orgonites-trhacknon
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "python app.py"
+    startCommand: "python main.py"
     plan: free
