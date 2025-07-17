@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr" class="bg-black text-white">
+<head>
+    <meta charset="UTF-8">
+    <title>trhacknon - Générateur d'Orgonites</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="p-6">
+    <h1 class="text-4xl text-purple-400 font-bold mb-4 text-center">🔮 Générateur d'Orgonites par trhacknon</h1>
+
+    <form method="POST" class="max-w-2xl mx-auto bg-gray-900 p-6 rounded-lg shadow-xl">
+        <h2 class="text-lg font-semibold text-purple-300 mb-2">Choix des composants</h2>
+        <div class="grid grid-cols-2 gap-2 mb-4">
+            <label><input type="checkbox" name="cuivre"> Spirale en cuivre</label>
+            <label><input type="checkbox" name="amethyste"> Améthyste</label>
+            <label><input type="checkbox" name="quartz"> Quartz</label>
+            <label><input type="checkbox" name="obsidienne"> Obsidienne</label>
+            <label><input type="checkbox" name="lapis"> Lapis Lazuli</label>
+            <label><input type="checkbox" name="tourmaline"> Tourmaline noire</label>
+        </div>
+
+        <h2 class="text-lg font-semibold text-purple-300 mb-2">Effets visuels</h2>
+        <select name="effet" class="w-full p-2 mb-4 rounded bg-gray-800 text-white">
+            <option value="">-- Choisir un effet --</option>
+            <option value="galaxie">Effet galaxie</option>
+            <option value="chakra">Aura arc-en-ciel (chakra)</option>
+            <option value="feu">Style feu/lave</option>
+            <option value="glace">Effet cristal de glace</option>
+        </select>
+
+        <h2 class="text-lg font-semibold text-purple-300 mb-2">Style artistique</h2>
+        <select name="style" class="w-full p-2 mb-4 rounded bg-gray-800 text-white">
+            <option value="">-- Choisir un style --</option>
+            <option value="spirituel">Spirituel / géométrie sacrée</option>
+            <option value="realiste">Hyper-réaliste</option>
+            <option value="blueprint">Schéma technique (blueprint)</option>
+        </select>
+
+        <button class="w-full bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded">
+            Générer l'image
+        </button>
+    </form>
+
+{% if image_url and schema_url %}
+<div class="mt-6 flex flex-col md:flex-row justify-center gap-6">
+    <div class="text-center">
+        <h2 class="text-lg text-purple-400 font-semibold">🎨 Image artistique</h2>
+        <img src="{{ image_url }}" class="rounded shadow-lg max-w-md mx-auto mt-2">
+    </div>
+    <div class="text-center">
+        <h2 class="text-lg text-purple-400 font-semibold">📐 Schéma technique</h2>
+        <img src="{{ schema_url }}" class="rounded shadow-lg max-w-md mx-auto mt-2">
+    </div>
+</div>
+{% endif %}
+
+<div class="text-center mt-8">
+    <a href="/historique" class="text-blue-400 hover:underline">📜 Voir l'historique des créations</a>
+</div>
+</body>
+</html>
